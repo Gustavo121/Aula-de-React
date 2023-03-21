@@ -2,28 +2,21 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home';
 import Contato from './pages/Contato';
 import Empresa from './pages/Empresa';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 function App() {
 
   return (
 
     <Router>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/empresa">Empresa</Link>
-        </li>
-        <li>
-          <Link to="/contato">Contato</Link>
-        </li>
-      </ul>
+      <Navbar/>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/empresa" element={<Empresa />} />
-        <Route exact path="/contato" element={<Contato />} />
+        <Route path="/empresa" element={<Empresa />} />
+        <Route path="/contato" element={<Contato />} />
       </Routes>
+      <Footer/>
     </Router>
 
   );
